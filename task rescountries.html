@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+
+
+//Get all the countries from the Asia continent /region using the Filter function
+//Get all the countries with a population of less than 2 lakhs using Filter function
+//Print the following details name, capital, flag using forEach function
+//Print the total population of countries using reduce function
+//Print the country which uses US Dollars as currency.
+
+
+//1 Get all the countries from the Asia continent /region using the Filter function
+
+
+
+        var request = new XMLHttpRequest()
+        request.open ('Get', "https://restcountries.com/v3.1/all")
+        request.send()
+
+        request.onload=function(){
+            var api=JSON.parse(request.response)
+            
+            let value =api.filter((element)=>{
+                //console.log(element.region === Asia)
+            })
+
+            //console.log(value)
+        }
+
+//Get all the countries with a population of less than 2 lakhs using Filter function
+        var request = new XMLHttpRequest()
+        request.open ('Get', "https://restcountries.com/v3.1/all")
+        request.send()
+
+        request.onload=function(){
+            var api=JSON.parse(request.response)
+            
+            let value =api.filter((element)=>{
+               // console.log(element.population>200000)
+            })
+
+            //console.log(value)
+        }
+
+//Print the following details name, capital, flag using forEach function
+
+        var request = new XMLHttpRequest()
+        request.open ('Get', "https://restcountries.com/v3.1/all")
+        request.send()
+
+        request.onload=function(){
+            var api=JSON.parse(request.response)
+            
+            let value =api.forEach((element)=>{
+               // let name = element.name.common
+               // let capital = element.capital
+               // let flag = element.flag
+               // console.log(name,capital,flag)
+            })
+
+        }
+
+
+        //Print the total population of countries using reduce function
+
+        var request = new XMLHttpRequest()
+        request.open ('Get', "https://restcountries.com/v3.1/all")
+        request.send()
+
+        request.onload=function(){
+            var api=JSON.parse(request.response)
+            
+            let value =api.reduce((acc,element)=>{
+
+                let value = acc+element.population
+               // console.log(value)
+                
+            })
+
+        }
+
+
+        //Print the country which uses US Dollars as currency.
+
+        var request = new XMLHttpRequest()
+        request.open ('Get', "https://restcountries.com/v3.1/all")
+        request.send()
+
+        request.onload=function(){
+            var api=JSON.parse(request.response)
+            
+            let value =api.filter((element)=>{
+
+             console.log(element.currencies === $)
+                
+            })
+
+        }
+
+
+
+    </script>
+</body>
+</html>
